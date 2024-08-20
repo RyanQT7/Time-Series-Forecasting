@@ -1,0 +1,31 @@
+
+  0%|                                                                                                                                                      | 0/120 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "H:\dachang\ViTST-main\code\FD003_train\run_VisionTextCLS.py", line 584, in <module>
+    acc, precision, recall, F1, auc, aupr, rmse, mape, mae = fine_tune_hf(
+  File "H:\dachang\ViTST-main\code\FD003_train\run_VisionTextCLS.py", line 296, in fine_tune_hf
+    train_results = trainer.train()
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 1859, in train
+    return inner_training_loop(
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 2203, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 3138, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 3161, in compute_loss
+    outputs = model(**inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD003_train\..\models\vision_text_dual_encoder\modeling_vision_text_dual_encoder.py", line 366, in forward
+    vision_outputs = self.vision_model(
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD003_train\..\models\swin\modeling_swin.py", line 1052, in forward
+    embedding_output, input_dimensions = self.embeddings(pixel_values, bool_masked_pos=bool_masked_pos)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD003_train\..\models\swin\modeling_swin.py", line 313, in forward
+    embeddings, output_dimensions = self.patch_embeddings(pixel_values)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD003_train\..\models\swin\modeling_swin.py", line 381, in forward
+    raise ValueError(
+ValueError: Input image size (256*384) doesn't match model (256*320).

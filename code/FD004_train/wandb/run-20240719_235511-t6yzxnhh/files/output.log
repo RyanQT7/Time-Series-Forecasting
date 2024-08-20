@@ -1,0 +1,18 @@
+
+  0%|                                                                                                                                                      | 0/320 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "H:\dachang\ViTST-main\code\FD004_train\run_VisionTextCLS.py", line 584, in <module>
+    acc, precision, recall, F1, auc, aupr, rmse, mape, mae = fine_tune_hf(
+  File "H:\dachang\ViTST-main\code\FD004_train\run_VisionTextCLS.py", line 296, in fine_tune_hf
+    train_results = trainer.train()
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 1859, in train
+    return inner_training_loop(
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 2203, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 3138, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 3161, in compute_loss
+    outputs = model(**inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD004_train\..\models\vision_text_dual_encoder\modeling_vision_text_dual_encoder.py", line 373, in forward
+    text_outputs = self.text_model(

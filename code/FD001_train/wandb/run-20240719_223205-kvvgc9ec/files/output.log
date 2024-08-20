@@ -1,0 +1,36 @@
+
+  0%|                                                                                                                                                       | 0/20 [00:00<?, ?it/s][34m[1mwandb[39m[22m: Network error resolved after 0:01:12.863686, resuming normal operation.
+Traceback (most recent call last):
+  File "H:\dachang\ViTST-main\code\FD001_train\run_VisionTextCLS.py", line 584, in <module>
+    acc, precision, recall, F1, auc, aupr, rmse, mape, mae = fine_tune_hf(
+  File "H:\dachang\ViTST-main\code\FD001_train\run_VisionTextCLS.py", line 296, in fine_tune_hf
+    train_results = trainer.train()
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 1859, in train
+    return inner_training_loop(
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 2203, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 3138, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\transformers\trainer.py", line 3161, in compute_loss
+    outputs = model(**inputs)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD001_train\..\models\vision_text_dual_encoder\modeling_vision_text_dual_encoder.py", line 366, in forward
+    vision_outputs = self.vision_model(
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD001_train\..\models\swin\modeling_swin.py", line 1054, in forward
+    encoder_outputs = self.encoder(
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD001_train\..\models\swin\modeling_swin.py", line 896, in forward
+    layer_outputs = layer_module(hidden_states, input_dimensions, layer_head_mask, output_attentions)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD001_train\..\models\swin\modeling_swin.py", line 818, in forward
+    layer_outputs = layer_module(hidden_states, input_dimensions, layer_head_mask, output_attentions)
+  File "D:\Anaconda3\envs\pytorch-gpu\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "H:\dachang\ViTST-main\code\FD001_train\..\models\swin\modeling_swin.py", line 774, in forward
+    layer_output = hidden_states + self.output(layer_output)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 18.00 MiB (GPU 0; 4.00 GiB total capacity; 10.29 GiB already allocated; 0 bytes free; 10.73 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

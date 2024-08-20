@@ -1,0 +1,80 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.8.18",
+    "heartbeatAt": "2024-07-19T16:12:46.992530",
+    "startedAt": "2024-07-19T16:12:45.321563",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--image_model",
+        "swin",
+        "--text_model",
+        "roberta",
+        "--freeze_vision_model",
+        "False",
+        "--freeze_text_model",
+        "False",
+        "--dataset",
+        "FD004",
+        "--dataset_prefix=FD002_order_differ_interpolation_-x1_xx2_4x6_256x384_",
+        "--seed",
+        "10",
+        "--save_total_limit",
+        "1",
+        "--train_batch_size",
+        "6",
+        "--eval_batch_size",
+        "16",
+        "--logging_steps",
+        "4",
+        "--save_steps",
+        "100",
+        "--epochs",
+        "20",
+        "--learning_rate",
+        "2e-5",
+        "--n_runs",
+        "1",
+        "--n_splits",
+        "5",
+        "--do_train"
+    ],
+    "state": "running",
+    "program": "H:\\dachang\\ViTST-main\\code\\FD004_train\\run_VisionTextCLS.py",
+    "codePathLocal": "run_VisionTextCLS.py",
+    "codePath": "run_VisionTextCLS.py",
+    "host": "LAPTOP-2RR8QHD0",
+    "username": "HP",
+    "executable": "D:\\Anaconda3\\envs\\pytorch-gpu\\python.exe",
+    "cpu_count": 14,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2300.0,
+        "min": 0.0,
+        "max": 2300.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2300.0,
+            "min": 0.0,
+            "max": 2300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 232.91183471679688,
+            "used": 136.22943115234375
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 15.675647735595703
+    }
+}

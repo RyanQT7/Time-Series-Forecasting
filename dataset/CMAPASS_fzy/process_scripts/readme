@@ -1,0 +1,27 @@
+Run the following codes in sequence:
+1. add_conditian.py :这将生成npy文件，即处理后的数据
+FD00i.npy->完整记录了test_FD00i和train_FD00i的数据，将两者拼接了起来，
+           test_FD00i在前，train_FD00i在后，train_FD00i发动机编码重新进行了编号，
+           并且在最后新增加了一行，记录了其工况类型
+FD00i_condition->记录了每个数据集的工况数量及其质心
+arr_outcomes_i.npy->第一列是发动机剩余使用寿命，第二列是发动机是否经历了完整测试周期
+P_list_1.npy->字典数组，记录id，static即工况数据，工况类型condition，其余变量以二维数组存储在了ts中，其中（id,condition）为key
+static.npy->记录工况变量名
+ts_params.npy->记录普通变量名
+
+2.one_hot_encode.py:这将初步生成PTdict_list_i.npy文件，文件包含了数据集中的所有内容
+PTdict_list_i.npy->'id': ID, 'static': static, 'extended_static': extended_static, 'arr': [t[1:] for t in ts],
+                   'time': [t[0] for t in ts], 'length': length,'condition':condition_type
+                   其中'arr'索引包含了21个传感器，extended_static就比'static'多了一个conditiontype,和'condition'数值一样
+                   但是其中还有许多缺失值，如'arr'中为空值的现象，需要我们剔除，即在这种工况下没有值,如FD002第166条数据
+
+3.Delete_missing_values.py:就删除了FD002第166条数据，没别的缺失值
+        不要使用这个文件，不然后面的工作不好展开
+
+4. Generate_splitID.py: generate train/val/test IDs by 8:1:1 proportion.
+phy12_spliti.npy->五种随机划分的方法，但是这五个文件涵盖的数据总量是相同的
+
+5.set_cycle.py过滤数据 记得神经网络复杂化 标签归一化
+
+6.nomoulize_outcome.py实现归一化
+
